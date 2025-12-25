@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPDB Nurmilad Boarding School 2026/2027</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset dan dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        /* Header */
+        header {
+            background-color: #0a5c36;
+            color: white;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 28px;
+            color: #ffd700;
+        }
+        
+        .logo-text h1 {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .logo-text p {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 8px 15px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 92, 54, 0.85), rgba(10, 92, 54, 0.9)), url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        .hero h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .tahun-ppdb {
+            background-color: #ffd700;
+            color: #0a5c36;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .daftar-btn {
+            background-color: #ffd700;
+            color: #0a5c36;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .daftar-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        
+        /* Container utama */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Accordion */
+        .accordion-container {
+            margin-bottom: 30px;
+        }
+        
+        .accordion-item {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .accordion-header {
+            background-color: #0a5c36;
+            color: white;
+            padding: 18px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion-header i {
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-header.active i {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            padding: 20px;
+            max-height: 2000px;
+        }
+        
+        /* Styling konten */
+        h3 {
+            color: #0a5c36;
+            margin-bottom: 15px;
+            font-size: 20px;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 5px;
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .info-box {
+            background-color: #f0f8f4;
+            border-left: 4px solid #0a5c36;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .jadwal-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .jadwal-item:last-child {
+            border-bottom: none;
+        }
+        
+        .jadwal-tanggal {
+            font-weight: 600;
+            color: #0a5c36;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0a5c36;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 22px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .kontak-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .kontak-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Responsif */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 20px;
+            }
+            
+            .hero p {
+                font-size: 14px;
+            }
+            
+            .accordion-header {
+                font-size: 16px;
+                padding: 15px;
+            }
+            
+            .jadwal-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text h1 {
+                font-size: 16px;
+            }
+            
+            .daftar-btn {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+            
+            .whatsapp-btn span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-quran"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Nurmilad Boarding School</h1>
+                    <p>Lempong, Bola, Wajo, Sulawesi Selatan</p>
+                </div>
+            </div>
+            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20bertanya%20tentang%20PPDB%20Nurmilad%20Boarding%20School" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>Chat Admin</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="tahun-ppdb">2026/2027</div>
+        <h2>PENERIMAAN SANTRI BARU</h2>
+        <h2>NURMILAD BOARDING SCHOOL</h2>
+        <p>Pendidikan Integral: Sekolah Formal + Pesantren + Asrama di Bumi Lamaddukelleng, Wajo</p>
+        <a href="https://forms.zoho.com/ppdb-nurmilad" class="daftar-btn" target="_blank">
+            <i class="fas fa-edit"></i> DAFTAR SEKARANG
+        </a>
+    </section>
+
+    <!-- Konten Utama dalam Accordion -->
+    <div class="container">
+        <!-- Profil Sekolah -->
+        <div class="accordion-container">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><i class="fas fa-school"></i> Profil Sekolah</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <h3>Nurmilad Boarding School</h3>
+                    <p>Sebuah lembaga pendidikan islam berasrama yang terletak di Lempong, Bola, Kabupaten Wajo, Sulawesi Selatan. Mengintegrasikan kurikulum nasional dengan pendidikan diniyah dan kepesantrenan.</p>
+                    
+                    <div class="info-box">
+                        <p><strong>Visi:</strong> Membentuk generasi Qur'ani yang berakhlak mulia, berprestasi akademik, dan berkontribusi bagi masyarakat.</p>
+                        <p><strong>Misi:</strong> Menyelenggarakan pendidikan integral yang mengembangkan potensi spiritual, intelektual, emosional, dan sosial santri.</p>
+                    </div>
+                    
+                    <h4>Fasilitas:</h4>
+                    <ul>
+                        <li>Asrama putra dan putri terpisah</li>
+                        <li>Ruang kelas ber-AC</li>
+                        <li>Masjid dan musholla</li>
+                        <li>Perpustakaan</li>
+                        <li>Laboratorium komputer</li>
+                        <li>Lapangan olahraga</li>
+                        <li>Lahan praktik pertanian</li>
+                        <li>Kantin sehat</li>
+                    </ul>
+                    
+                    <h4>Program Unggulan:</h4>
+                    <ul>
+                        <li>Tahfizh Al-Qur'an (minimal target 3 juz/tahun)</li>
+                        <li>Pembelajaran Bahasa Arab & Inggris</li>
+                        <li>Kepemimpinan dan kemandirian</li>
+                        <li>Life skill (pertanian, kesenian, komputer)</li>
+                        <li>Ekstrakurikuler: Kaligrafi, Marawis, Pencak Silat</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jadwal PPDB -->
+        <div class="accordion-container">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><i class="fas fa-calendar-alt"></i> Jadwal PPDB 2026/2027</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <h3>Timeline Penerimaan Santri Baru</h3>
+                    <p>Berikut adalah jadwal penting untuk PPDB Gelombang I Tahun Pelajaran 2026/2027:</p>
+                    
+                    <div class="jadwal-item">
+                        <span class="jadwal-kegiatan">Pendaftaran Gelombang I Dibuka</span>
+                        <span class="jadwal-tanggal">1 Januari 2026</span>
+                    </div>
+                    
+                    <div class="jadwal-item">
+                        <span class="jadwal-kegiatan">Penutupan Pendaftaran Gelombang I</span>
+                        <span class="jadwal-tanggal">31 Maret 2026</span>
+                    </div>
+                    
+                    <div class="jadwal-item">
+                        <span class="jadwal-kegiatan">Tes Seleksi (Tulis & Baca Qur'an)</span>
+                        <span class="jadwal-tanggal">5 April 2026</span>
+                    </div>
+                    
+                    <div class="jadwal-item">
+                        <span class="jadwal-kegiatan">Wawancara Orang Tua & Calon Santri</span>
+                        <span class="jadwal-tanggal">6-7 April 2026</span>
+                    </div>
+                    
+                    <div class="jadwal-item">
+                        <span class="jadwal-kegiatan">Pengumuman Hasil Seleksi</span>
+                        <span class="jadwal-tanggal">12 April 2026</span>
+                    </div>
+                    
+                    <div class="jadwal-item">
+                        <span class="jadwal-kegiatan">Daftar Ulang & Pembayaran</span>
+                        <span class="jadwal-tanggal">13-20 April 2026</span>
+                    </div>
+                    
+                    <div class="jadwal-item">
+                        <span class="jadwal-kegiatan">Pengenalan Lingkungan Sekolah</span>
+                        <span class="jadwal-tanggal">10-11 Juli 2026</span>
+                    </div>
+                    
+                    <div class="jadwal-item">
+                        <span class="jadwal-kegiatan">Masuk Asrama & Awal Tahun Pelajaran</span>
+                        <span class="jadwal-tanggal">14 Juli 2026</span>
+                    </div>
+                    
+                    <div class="info-box">
+                        <p><strong>Catatan:</strong> Gelombang II akan dibuka jika kuota belum terpenuhi. Informasi lebih lanjut hubungi admin.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Persyaratan & Tata Tertib -->
+        <div class="accordion-container">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><i class="fas fa-clipboard-list"></i> Persyaratan & Tata Tertib</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <h3>Persyaratan Pendaftaran</h3>
+                    <ol>
+                        <li>Usia minimal 12 tahun (kelas 7 SMP) dan maksimal 15 tahun (kelas 10 SMA)</li>
+                        <li>Fotokopi akta kelahiran (2 lembar)</li>
+                        <li>Fotokopi kartu keluarga (2 lembar)</li>
+                        <li>Fotokopi rapor 2 semester terakhir (2 lembar)</li>
+                        <li>Pas foto 3x4 (4 lembar, background merah)</li>
+                        <li>Fotokopi KIP/KPS (jika ada)</li>
+                        <li>Surat keterangan sehat dari dokter</li>
+                        <li>Surat pernyataan orang tua (form tersedia)</li>
+                    </ol>
+                    
+                    <h3>Tata Tertib Santri</h3>
+                    <ul>
+                        <li>Menjaga kebersihan diri, asrama, dan lingkungan sekolah</li>
+                        <li>Mengikuti semua kegiatan sesuai jadwal yang ditentukan</li>
+                        <li>Menghormati pengasuh, ustadz/ustadzah, dan senior</li>
+                        <li>Mengenakan seragam lengkap dan rapi sesuai ketentuan</li>
+                        <li>Dilarang membawa smartphone (HP hanya boleh yang non-smartphone)</li>
+                        <li>Dilarang membawa barang berharga atau uang berlebihan</li>
+                        <li>Izin keluar asrama hanya dengan izin wali asrama dan orang tua</li>
+                        <li>Mengikuti sholat berjamaah di masjid tepat waktu</li>
+                    </ul>
+                    
+                    <h3>Aturan Kunjungan Orang Tua</h3>
+                    <ul>
+                        <li>Kunjungan hanya diperbolehkan hari Sabtu dan Ahad</li>
+                        <li>Waktu kunjungan: 09.00-16.00 WITA</li>
+                        <li>Dilarang membawa makanan/minuman dari luar tanpa seizin pengasuh</li>
+                        <li>Orang tua wajib melapor ke pos satpam dan wali asrama</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daftar Perlengkapan -->
+        <div class="accordion-container">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><i class="fas fa-suitcase"></i> Daftar Perlengkapan</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <h3>Perlengkapan Wajib yang Harus Dibawa</h3>
+                    
+                    <h4>1. Seragam</h4>
+                    <ul>
+                        <li><strong>Putra:</strong> Kemeja putih + celana abu-abu (4 pasang), Batik pesantren (2 buah), Seragam olahraga (2 set), Peci hitam (2 buah)</li>
+                        <li><strong>Putri:</strong> Gamis warna biru navy (4 buah), Kerudung putih (4 buah), Seragam olahraga (2 set)</li>
+                    </ul>
+                    
+                    <h4>2. Perlengkapan Ibadah</h4>
+                    <ul>
+                        <li>Al-Qur'an (1 buah)</li>
+                        <li>Sarung (2 buah)</li>
+                        <li>Sajadah (1 buah)</li>
+                        <li>Mukena (khusus putri, 2 buah)</li>
+                        <li>Peci/songkok (khusus putra, 2 buah)</li>
+                    </ul>
+                    
+                    <h4>3. Perlengkapan Sekolah</h4>
+                    <ul>
+                        <li>Tas sekolah (1 buah)</li>
+                        <li>Buku tulis dan alat tulis lengkap</li>
+                        <li>Kalkulator ilmiah (untuk tingkat SMA)</li>
+                        <li>Kamus Bahasa Arab & Inggris</li>
+                    </ul>
+                    
+                    <h4>4. Perlengkapan Asrama</h4>
+                    <ul>
+                        <li>Sprei dan sarung bantal (2 set)</li>
+                        <li>Selimut (1 buah)</li>
+                        <li>Bantal dan guling</li>
+                        <li>Lemari pakaian kecil (locker disediakan)</li>
+                        <li>Sandal dan sepatu (masing-masing 2 pasang)</li>
+                        <li>Perlengkapan mandi lengkap</li>
+                        <li>Handuk (2 buah)</li>
+                    </ul>
+                    
+                    <div class="info-box">
+                        <p><strong>Perhatian:</strong> Dilarang membawa barang elektronik (kecuali radio kaset), perhiasan berlebihan, dan uang tunai lebih dari Rp 100.000.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pernyataan -->
+        <div class="accordion-container">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><i class="fas fa-file-signature"></i> Pernyataan Calon Santri & Orang Tua</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <h3>Pernyataan Orang Tua/Wali</h3>
+                    <p>Dengan ini saya orang tua/wali dari calon santri menyatakan:</p>
+                    <ol>
+                        <li>Bersedia menitipkan anak saya untuk dididik dan dibina di Nurmilad Boarding School selama masa pendidikan.</li>
+                        <li>Bersedia mematuhi semua peraturan dan tata tertib yang berlaku di sekolah.</li>
+                        <li>Bersedia membayar semua biaya pendidikan sesuai ketentuan dan tepat waktu.</li>
+                        <li>Bersedia mendukung program tahfiz Al-Qur'an dan pendidikan diniyah.</li>
+                        <li>Bersedia bekerjasama dengan pihak sekolah dalam mendidik anak saya.</li>
+                        <li>Bersedia tidak menarik anak saya sebelum masa pendidikan selesai tanpa alasan yang kuat.</li>
+                    </ol>
+                    
+                    <h3>Pernyataan Calon Santri</h3>
+                    <p>Dengan ini saya calon santri menyatakan:</p>
+                    <ol>
+                        <li>Bersedia menaati semua peraturan dan tata tertib Nurmilad Boarding School.</li>
+                        <li>Bersedia mengikuti program tahfiz Al-Qur'an dengan sungguh-sungguh.</li>
+                        <li>Bersedia hidup mandiri di asrama dan menjaga kerukunan dengan sesama santri.</li>
+                        <li>Bersedia mengikuti semua kegiatan pembelajaran dengan disiplin.</li>
+                        <li>Bersedia menjaga nama baik sekolah di dalam dan luar lingkungan sekolah.</li>
+                        <li>Bersedia menerima sanksi jika melanggar peraturan yang telah ditetapkan.</li>
+                    </ol>
+                    
+                    <div class="info-box">
+                        <p><strong>Catatan:</strong> Pernyataan ini akan ditandatangani pada saat daftar ulang dengan materai Rp 10.000.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="accordion-container">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><i class="fas fa-question-circle"></i> FAQ (Pertanyaan Umum)</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <h3>Pertanyaan yang Sering Diajukan</h3>
+                    
+                    <h4>1. Berapa biaya pendidikan di Nurmilad Boarding School?</h4>
+                    <p>Biaya terdiri dari uang pangkal dan SPP bulanan. Untuk rincian lengkap, silahkan hubungi admin via WhatsApp karena biaya dapat berbeda berdasarkan jenjang pendidikan.</p>
+                    
+                    <h4>2. Apakah ada beasiswa bagi santri berprestasi?</h4>
+                    <p>Ya, kami memberikan beasiswa prestasi untuk santri yang memiliki hafalan Qur'an minimal 5 juz atau ranking 3 besar di sekolah sebelumnya. Juga ada beasiswa untuk anak yatim dan keluarga tidak mampu.</p>
+                    
+                    <h4>3. Bagaimana sistem pembelajaran di NBS?</h4>
+                    <p>Kami menerapkan sistem integral: Pagi (07.00-13.00) sekolah formal, Siang (14.00-16.00) diniyah dan bahasa, Malam (19.00-21.00) tahfiz dan muraja'ah.</p>
+                    
+                    <h4>4. Bolehkah santri pulang selama masa pendidikan?</h4>
+                    <p>Santri diperbolehkan pulang pada liburan semester dan liburan hari raya. Untuk kepentingan keluarga, orang tua bisa mengajukan izin khusus.</p>
+                    
+                    <h4>5. Bagaimana dengan kesehatan santri?</h4>
+                    <p>Kami memiliki UKS dan kerja sama dengan puskesmas terdekat. Untuk kondisi darurat, santri akan dirujuk ke rumah sakit dan orang tua dihubungi segera.</p>
+                    
+                    <h4>6. Apa jenjang pendidikan yang tersedia?</h4>
+                    <p>Saat ini kami menerima untuk jenjang SMP (kelas 7-9) dan SMA (kelas 10-12). Rencana ke depan akan dibuka untuk jenjang MTs dan MA.</p>
+                    
+                    <h4>7. Bagaimana cara mendaftar?</h4>
+                    <p>Silakan klik tombol "DAFTAR SEKARANG" di atas untuk mengisi formulir online. Atau datang langsung ke sekretariat kami di Lempong, Bola, Wajo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <i class="fas fa-book-quran"></i>
+            <span>Nurmilad Boarding School</span>
+        </div>
+        
+        <div class="kontak-info">
+            <div class="kontak-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Lempong, Desa Bola, Kecamatan Bola, Kabupaten Wajo, Sulawesi Selatan</span>
+            </div>
+            
+            <div class="kontak-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>Admin PPDB: 0812-3456-7890 (Ustadz Fulan)</span>
+            </div>
+            
+            <div class="kontak-item">
+                <i class="fas fa-envelope"></i>
+                <span>ppdb@nurmiladboarding.sch.id</span>
+            </div>
+        </div>
+        
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20bertanya%20tentang%20PPDB%20Nurmilad%20Boarding%20School" class="daftar-btn" target="_blank" style="margin: 15px auto;">
+            <i class="fab fa-whatsapp"></i> TANYA VIA WHATSAPP
+        </a>
+        
+        <div class="copyright">
+            <p>© 2025 - 2026 Nurmilad Boarding School. Hak Cipta Dilindungi.</p>
+            <p>Website PPDB Tahun Pelajaran 2026/2027</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript untuk accordion buka-tutup
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    // Tutup semua accordion lainnya
+                    accordionHeaders.forEach(otherHeader => {
+                        if (otherHeader !== header) {
+                            otherHeader.classList.remove('active');
+                            otherHeader.nextElementSibling.classList.remove('active');
+                        }
+                    });
+                    
+                    // Buka/tutup accordion yang diklik
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+            
+            // Buka accordion pertama (Profil Sekolah) secara default
+            if (accordionHeaders.length > 0) {
+                accordionHeaders[0].classList.add('active');
+                accordionHeaders[0].nextElementSibling.classList.add('active');
+            }
+            
+            // Tambahkan tahun dinamis di copyright
+            const copyrightYear = document.querySelector('.copyright p');
+            if (copyrightYear) {
+                const currentYear = new Date().getFullYear();
+                copyrightYear.innerHTML = copyrightYear.innerHTML.replace('2025', currentYear);
+            }
+        });
+    </script>
+</body>
+</html>
