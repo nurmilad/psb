@@ -3,173 +3,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>SPMB Nurmild Boarding School | Pendaftaran SMP-SMA 2026/2027</title>
+  <title>Nurmild Boarding School | Pendaftaran Santri Baru 2026/2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
     }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(145deg, #e0f2ef 0%, #c2e3de 100%);
-      color: #0b463f;
-      padding: 20px 14px 50px;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 10% 20%, #fef9e6, #f0f3e8);
+      color: #1e2f2b;
+      padding: 28px 20px 60px;
     }
 
     .container {
-      max-width: 650px;
+      max-width: 720px;
       margin: 0 auto;
     }
 
-    /* Kartu utama */
-    .card {
-      background: rgba(255, 255, 255, 0.97);
-      border-radius: 36px;
-      padding: 20px 18px;
-      margin-bottom: 20px;
-      box-shadow: 0 12px 24px rgba(0, 50, 45, 0.08);
-      border: 1px solid rgba(38, 166, 154, 0.3);
-      transition: all 0.2s;
+    /* modern glassmorphic card style */
+    .glass-card {
+      background: rgba(255, 255, 245, 0.96);
+      backdrop-filter: blur(2px);
+      border-radius: 48px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0,0,0,0.02);
+      transition: all 0.25s ease;
+      border: 1px solid rgba(160, 190, 170, 0.4);
     }
 
-    /* Hero Tosca */
-    .hero {
-      background: linear-gradient(135deg, #0c6b5f, #149c8a);
+    /* hero baru dengan vibe elegan + logo */
+    .hero-modern {
+      background: linear-gradient(125deg, #1F4E46 0%, #2A7A6B 100%);
+      border-radius: 56px;
+      padding: 2rem 1.8rem;
+      margin-bottom: 28px;
       color: white;
-      text-align: center;
-      padding: 32px 20px;
-      border-radius: 44px;
-      margin-bottom: 24px;
-      box-shadow: 0 16px 28px -8px rgba(12, 107, 95, 0.4);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 18px 30px -12px rgba(26, 70, 60, 0.4);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
     }
-
-    .hero h1 {
-      font-size: 2rem;
+    .hero-modern::after {
+      content: "🏫";
+      font-size: 130px;
+      opacity: 0.08;
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      pointer-events: none;
+    }
+    .hero-logo {
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .hero-logo img {
+      max-width: 85px;
+      height: auto;
+      border-radius: 28px;
+      background: white;
+      padding: 5px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+    .hero-logo img:hover {
+      transform: scale(1.02);
+    }
+    .hero-text {
+      flex: 1;
+    }
+    .hero-text h1 {
+      font-size: 1.9rem;
       font-weight: 800;
       letter-spacing: -0.3px;
-      margin-bottom: 6px;
+      line-height: 1.2;
+      margin: 0;
     }
-
-    .hero .sub {
-      font-size: 1rem;
-      font-weight: 500;
-      border-top: 1px solid #b3f0e8;
+    .badge-tahun {
+      background: #FFD966;
+      color: #1F4E46;
       display: inline-block;
-      padding-top: 6px;
-    }
-
-    .hero .tahun {
-      background: #ffdb8e;
-      color: #0a5a50;
-      display: inline-block;
-      padding: 6px 20px;
-      border-radius: 40px;
+      padding: 6px 18px;
+      border-radius: 60px;
       font-weight: 800;
-      margin: 14px 0 8px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      margin: 12px 0 8px;
     }
-
-    .hero .pendaftaran-date {
-      background: rgba(255, 248, 220, 0.2);
-      display: inline-block;
+    .date-chip {
+      background: rgba(255,255,210,0.2);
+      backdrop-filter: blur(4px);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       padding: 8px 20px;
       border-radius: 60px;
-      font-size: 0.9rem;
       font-weight: 500;
-      backdrop-filter: blur(4px);
+      font-size: 0.9rem;
+      margin-top: 6px;
     }
-
-    /* Grid biaya */
-    .biaya-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .address {
       margin-top: 18px;
-    }
-    .biaya-item {
-      background: #f6fffd;
-      border-radius: 28px;
-      padding: 14px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      border-left: 6px solid #20b2aa;
-    }
-    .biaya-item.gratis {
-      background: #e6f6f3;
-      border-left-color: #0f8b7a;
-    }
-    .biaya-label {
-      font-weight: 700;
-      color: #146b60;
-    }
-    .biaya-nominal {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #0f5e57;
-    }
-    .note-biaya {
-      background: #def0ec;
-      padding: 12px 16px;
-      border-radius: 24px;
       font-size: 0.85rem;
-      margin-top: 20px;
+      opacity: 0.85;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    /* Responsive logo & text */
+    @media (max-width: 550px) {
+      .hero-modern {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text h1 {
+        font-size: 1.5rem;
+      }
+      .address {
+        justify-content: center;
+      }
+      .hero-logo img {
+        max-width: 70px;
+      }
+      body { padding: 16px 14px 40px; }
     }
 
-    /* Tombol aksi */
-    .tombol-aksi {
+    /* biaya grid premium */
+    .biaya-highlight {
+      background: #ffffffdd;
+      border-radius: 48px;
+      padding: 1.5rem;
+      margin-bottom: 20px;
+      border: 1px solid #cbddd6;
+    }
+    .biaya-flex {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       gap: 14px;
       margin: 20px 0 10px;
     }
-    .btn {
+    .biaya-card {
+      background: #FBFCF8;
+      flex: 1 1 180px;
+      border-radius: 32px;
+      padding: 16px 12px;
+      text-align: center;
+      box-shadow: 0 6px 12px -8px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+      border-left: 5px solid #f1b24a;
+    }
+    .biaya-card.gratis-card {
+      border-left-color: #2e9b86;
+      background: #F1F9F6;
+    }
+    .biaya-label {
+      font-weight: 700;
+      color: #285e53;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+    .biaya-nominal {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #1f5a4f;
+      line-height: 1;
+    }
+    .sub-biaya {
+      font-size: 0.7rem;
+      background: #eef3ef;
+      padding: 10px 14px;
+      border-radius: 32px;
+      margin-top: 12px;
+    }
+
+    /* tombol aksi premium */
+    .aksi-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 15px 0 20px;
+    }
+    .btn-premium {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      padding: 16px 12px;
-      border-radius: 60px;
+      padding: 14px 18px;
+      border-radius: 100px;
       font-weight: 700;
       font-size: 1rem;
       text-decoration: none;
-      transition: 0.2s;
+      background: white;
+      transition: all 0.2s;
+      flex: 1 1 170px;
+      box-shadow: 0 4px 9px rgba(0, 0, 0, 0.05);
+      border: 1px solid #d1e0da;
     }
-    .btn:active { transform: scale(0.97); }
-    .btn-pendaftaran { background: #0f6b60; color: white; }
-    .btn-wa-admin { background: #25D366; color: white; }
-    .btn-wa-grup { background: #128C7E; color: white; }
+    .btn-premium:active { transform: scale(0.97); }
+    .btn-daftar { background: #22665a; color: white; border: none; box-shadow: 0 10px 18px -8px #22665a70; }
+    .btn-wa-admin { background: #25D366; color: white; border: none; }
+    .btn-wa-group { background: #128C7E; color: white; border: none; }
 
-    /* ACCORDION STYLE */
-    .accordion-item {
-      margin-bottom: 14px;
-      border-radius: 28px;
-      background: #fefefe;
+    /* accordion elegan */
+    .accordion-modern {
+      background: rgba(255, 255, 250, 0.96);
+      border-radius: 40px;
+      margin-bottom: 18px;
       overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-      border: 1px solid #cdece7;
+      transition: all 0.1s;
+      border: 1px solid #ddebe5;
     }
     .accordion-header {
-      background: #ffffff;
-      padding: 18px 20px;
+      padding: 20px 22px;
       font-weight: 800;
       font-size: 1.2rem;
-      cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: 0.2s;
-      color: #0c6b5f;
-      border-radius: 28px;
+      cursor: pointer;
+      background: white;
+      color: #1d6a5e;
+      transition: background 0.2s;
     }
     .accordion-header i {
       font-size: 1.3rem;
-      transition: transform 0.2s;
+      transition: transform 0.25s;
     }
     .accordion-header.active i {
       transform: rotate(180deg);
@@ -177,235 +242,234 @@
     .accordion-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.35s ease-out;
-      background: #fefef7;
-      padding: 0 20px;
-      border-top: 0px solid #cdece7;
+      transition: max-height 0.35s cubic-bezier(0.33, 1, 0.68, 1);
+      background: #FEFEF9;
+      padding: 0 22px;
     }
     .accordion-content.show {
-      max-height: 2000px;
-      padding: 18px 20px;
-      border-top: 1px solid #cdece7;
+      max-height: 1600px;
+      padding: 8px 22px 28px 22px;
+      border-top: 1px solid #e2f0eb;
     }
     .list-icon {
       list-style: none;
     }
     .list-icon li {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       display: flex;
-      align-items: center;
       gap: 12px;
+      align-items: center;
     }
     .list-icon i {
-      width: 24px;
-      color: #2c9c8f;
+      width: 26px;
+      color: #2b8f7c;
     }
-    .chip-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 8px 0;
-    }
-    .chip {
-      background: #e3f4f0;
-      padding: 6px 16px;
+    .chip-modern {
+      background: #ecf7f3;
+      padding: 6px 18px;
       border-radius: 50px;
+      display: inline-block;
       font-size: 0.8rem;
+      font-weight: 600;
+      margin: 0 6px 8px 0;
+    }
+    .fasilitas-badge {
+      background: #ecf7f3;
+      padding: 5px 18px;
+      border-radius: 50px;
+      font-size: 0.78rem;
       font-weight: 500;
-    }
-    .fasilitas-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .fasilitas-chip {
-      background: #e3f4f0;
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 0.8rem;
+      display: inline-block;
+      margin: 0 6px 8px 0;
     }
     .jadwal-box {
-      background: #eefaf7;
-      padding: 16px;
-      border-radius: 24px;
-      margin-top: 5px;
+      background: #eef3ef;
+      border-radius: 28px;
+      padding: 16px 20px;
     }
-    .footer-contact {
-      background: #0b665b;
-      color: #e0f7f3;
-      border-radius: 36px;
-      padding: 22px 16px;
+    .footer-elegant {
+      background: #1c4940;
+      border-radius: 48px;
+      padding: 28px 20px;
       text-align: center;
+      color: #e0f2ed;
+      margin-top: 20px;
     }
     hr {
-      margin: 8px 0;
-      border-color: #cde0dc;
+      margin: 16px 0;
+      border-color: #cde0da;
     }
-    @media (min-width: 480px) {
-      .biaya-grid { flex-direction: row; flex-wrap: wrap; }
-      .biaya-item { flex: 1; min-width: 170px; flex-direction: column; gap: 6px; }
-      .tombol-aksi { flex-direction: row; flex-wrap: wrap; }
-      .btn { flex: 1; min-width: 170px; }
+    .icon-highlight {
+      font-size: 1.1rem;
+    }
+    @media (max-width: 550px) {
+      .biaya-nominal { font-size: 1.3rem; }
     }
   </style>
 </head>
 <body>
 <div class="container">
-  <!-- HERO -->
-  <div class="hero">
-    <h1>📢 DIBUKA SPMB SMP-SMA</h1>
-    <div class="sub">Sistem Penerimaan Murid Baru</div>
-    <div class="tahun">TAHUN PELAJARAN 2026 - 2027</div>
-    <div class="pendaftaran-date"><i class="fas fa-calendar-alt"></i> 6 April – 12 Juli 2026</div>
-    <div style="margin-top: 12px; font-size: 0.8rem;"><i class="fas fa-map-marker-alt"></i> Kampus Nurmild Boarding School</div>
-  </div>
-
-  <!-- BIAYA -->
-  <div class="card">
-    <h2 style="font-size:1.5rem; color:#0c6b5f;"><i class="fas fa-ticket-alt"></i> Biaya Pendaftaran & Pendidikan</h2>
-    <div class="biaya-grid">
-      <div class="biaya-item"><span class="biaya-label">📋 Pendaftaran</span><span class="biaya-nominal">Rp150.000</span></div>
-      <div class="biaya-item gratis"><span class="biaya-label">🏗️ Pembangunan</span><span class="biaya-nominal">GRATIS</span></div>
-      <div class="biaya-item gratis"><span class="biaya-label">📚 Pendidikan Formal</span><span class="biaya-nominal">GRATIS</span></div>
-      <div class="biaya-item gratis"><span class="biaya-label">⚡ Listrik, Air, Asrama, Tempat Tidur</span><span class="biaya-nominal">GRATIS</span></div>
+  <!-- HERO DENGAN LOGO -->
+  <div class="hero-modern">
+    <div class="hero-logo">
+      <img src="logo.png" alt="Logo Nurmild Boarding School">
     </div>
-    <div class="note-biaya"><i class="fas fa-utensils"></i> Konsumsi bulanan Rp450.000 | Iuran pemeliharaan pondok Rp150.000.<br>✨ Beasiswa prestasi, tahfidz, dan bansos tersedia.</div>
+    <div class="hero-text">
+      <h1>📢 SPMB SMP - SMA<br>Nurmild Boarding School</h1>
+      <div class="badge-tahun">TAHUN PELAJARAN 2026/2027</div>
+      <div class="date-chip"><i class="fas fa-calendar-alt"></i> Pendaftaran: 6 April – 12 Juli 2026</div>
+      <div class="address"><i class="fas fa-map-marker-alt"></i> Kampus Terintegrasi • Pesantren Modern</div>
+    </div>
   </div>
 
-  <!-- TOMBOL AKSI -->
-  <div class="tombol-aksi">
-    <a href="https://forms.zohopublic.com/kurikulumnbs/form/FormulirPPDB20222023/formperma/-bRttw0T_yAdxCKwU5lu5OI75fdLrOVDUgzjMUpgKV0" target="_blank" class="btn btn-pendaftaran"><i class="fas fa-pen-alt"></i> Daftar Sekarang</a>
-    <a href="https://wa.me/6285796097322" target="_blank" class="btn btn-wa-admin"><i class="fab fa-whatsapp"></i> Admin</a>
-    <a href="https://chat.whatsapp.com/CBY9DcuXDSJ4na5IvwE18y" target="_blank" class="btn btn-wa-grup"><i class="fab fa-whatsapp"></i> Grup WA</a>
+  <!-- BIAYA UTAMA (GRATIS & DATA LENGKAP) -->
+  <div class="biaya-highlight">
+    <h2 style="font-size:1.5rem; display: flex; gap: 12px; align-items: center; color:#22665a;"><i class="fas fa-tag"></i> Biaya Spesial 2026</h2>
+    <div class="biaya-flex">
+      <div class="biaya-card"><div class="biaya-label">📋 Pendaftaran</div><div class="biaya-nominal">Rp150K</div></div>
+      <div class="biaya-card gratis-card"><div class="biaya-label">🏗️ Pembangunan</div><div class="biaya-nominal">GRATIS</div></div>
+      <div class="biaya-card gratis-card"><div class="biaya-label">📚 Pendidikan Formal</div><div class="biaya-nominal">GRATIS</div></div>
+      <div class="biaya-card gratis-card"><div class="biaya-label">⚡ Listrik, Air, Asrama</div><div class="biaya-nominal">GRATIS</div></div>
+    </div>
+    <div class="sub-biaya"><i class="fas fa-utensils"></i> Konsumsi bulanan Rp450.000 | Iuran pemeliharaan pondok Rp150.000<br>✨ Beasiswa prestasi, tahfidz, dan bansos (yatim & kurang mampu).</div>
   </div>
 
-  <!-- ========== ACCORDION UNTUK SEMUA BAGIAN ========== -->
+  <!-- TOMBOL AKSI PRESISI -->
+  <div class="aksi-group">
+    <a href="https://forms.zohopublic.com/kurikulumnbs/form/FormulirPPDB20222023/formperma/-bRttw0T_yAdxCKwU5lu5OI75fdLrOVDUgzjMUpgKV0" target="_blank" class="btn-premium btn-daftar"><i class="fas fa-pen-alt"></i> Daftar Sekarang</a>
+    <a href="https://wa.me/6285796097322" target="_blank" class="btn-premium btn-wa-admin"><i class="fab fa-whatsapp"></i> Admin Pusat</a>
+    <a href="https://chat.whatsapp.com/CBY9DcuXDSJ4na5IvwE18y" target="_blank" class="btn-premium btn-wa-group"><i class="fab fa-whatsapp"></i> Grup Informasi</a>
+  </div>
+
+  <!-- ACCORDION INTERAKTIF SEMUA KONTEN (tema baru) -->
   <!-- 1. Prestasi -->
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleAccordion(this)">🏅 Prestasi Akademik & Non-Akademik <i class="fas fa-chevron-down"></i></div>
+  <div class="accordion-modern">
+    <div class="accordion-header" onclick="toggleAccordion(this)">🏆 Prestasi & Kejuaraan <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
-      <div><strong>🏆 Nasional (LIPI/LPSN/OPSI/Kemendikbud)</strong></div>
-      <div class="chip-list"><span class="chip">10 Besar Nasional 2021</span><span class="chip">Finalis 2019 Solo</span><span class="chip">Perunggu 2018</span><span class="chip">Perak 2016 Jakarta</span><span class="chip">Emas 2013 Bali</span><span class="chip">Perak 2010 Jogja</span></div>
-      <div style="margin-top:12px"><strong>🌍 Internasional & Puskanas</strong></div>
-      <div class="chip-list"><span class="chip">16 Medali Emas (2026)</span><span class="chip">31 Medali Perak (2026)</span><span class="chip">13 Perunggu (2026)</span><span class="chip">4 Emas Olimpiade Semesta</span><span class="chip">Jamboree Nasional 2016/2022</span><span class="chip">Scientific Visit Thailand</span></div>
+      <div><strong>🏅 Nasional (LIPI/LPSN/OPSI/Kemendikbud)</strong></div>
+      <div style="margin: 8px 0 10px;">
+        <span class="chip-modern">10 Besar Nasional 2021</span> <span class="chip-modern">Finalis 2019 Solo</span> <span class="chip-modern">Perunggu 2018</span>
+        <span class="chip-modern">Perak 2016 Jakarta</span> <span class="chip-modern">Emas 2013 Bali</span> <span class="chip-modern">Perak 2010 Jogja</span>
+      </div>
+      <div><strong>🌍 Internasional & Puskanas</strong></div>
+      <div><span class="chip-modern">16 Medali Emas (2026)</span> <span class="chip-modern">31 Medali Perak (2026)</span> <span class="chip-modern">13 Perunggu (2026)</span>
+      <span class="chip-modern">4 Emas Olimpiade Semesta</span> <span class="chip-modern">Jamboree Nasional 2016/2022</span> <span class="chip-modern">Scientific Visit Thailand</span></div>
     </div>
   </div>
 
   <!-- 2. Program Sekul & Kepesantrenan -->
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleAccordion(this)">📚 Program Sekul & Kepesantrenan <i class="fas fa-chevron-down"></i></div>
+  <div class="accordion-modern">
+    <div class="accordion-header" onclick="toggleAccordion(this)">📖 Program Unggulan & Ekstrakurikuler <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
       <ul class="list-icon">
-        <li><i class="fas fa-microphone-alt"></i> Bimb. Da’wah & English Interactive</li>
+        <li><i class="fas fa-microphone-alt"></i> Bimbingan Da’wah & English Interactive</li>
         <li><i class="fas fa-book-quran"></i> Kajian Kitab Kuning, Hadist, Fiqhi, Adab, Tajwid</li>
-        <li><i class="fas fa-fist-raised"></i> Beladiri & Palang Merah Remaja</li>
+        <li><i class="fas fa-fist-raised"></i> Beladiri (Tapak Suci) & PMR</li>
         <li><i class="fas fa-music"></i> Seni Tradisional, Qasidah Rebana, Drumband</li>
-        <li><i class="fas fa-laptop-code"></i> Karya Tulis Ilmiah, Informatika</li>
-        <li><i class="fas fa-camera"></i> Fotografi / Videografi</li>
+        <li><i class="fas fa-laptop-code"></i> Karya Tulis Ilmiah, Olimpiade Informatika</li>
+        <li><i class="fas fa-camera"></i> Fotografi & Videografi</li>
         <li><i class="fas fa-tshirt"></i> Menjahit, Tata Boga</li>
         <li><i class="fas fa-campground"></i> Pramuka, Paskibra</li>
-        <li><i class="fas fa-language"></i> Bahasa Arab & Jepang</li>
+        <li><i class="fas fa-language"></i> Bahasa Arab & Bahasa Jepang</li>
       </ul>
     </div>
   </div>
 
-  <!-- 3. Fasilitas -->
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleAccordion(this)">🏫 Fasilitas NBS <i class="fas fa-chevron-down"></i></div>
+  <!-- 3. Fasilitas + unit usaha -->
+  <div class="accordion-modern">
+    <div class="accordion-header" onclick="toggleAccordion(this)">🏫 Fasilitas Super & Kewirausahaan <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
-      <div class="fasilitas-grid">
-        <span class="fasilitas-chip">🔬 Lab IPA</span><span class="fasilitas-chip">💻 Lab Komputer</span><span class="fasilitas-chip">📚 Perpustakaan</span>
-        <span class="fasilitas-chip">🏊 Kolam Renang</span><span class="fasilitas-chip">✂️ Menjahit</span><span class="fasilitas-chip">📱 Smart Panel</span>
-        <span class="fasilitas-chip">🕌 Saung Zikir</span><span class="fasilitas-chip">🏟️ Sport Centre</span><span class="fasilitas-chip">🍽️ Kantin & BLK</span>
-      </div>
-      <div style="background:#eaf9f5; border-radius: 24px; padding: 12px; margin-top: 14px;"><i class="fas fa-store"></i> Unit usaha: Air Mineral, NBS Cake & Bakery, Perikanan, Kebun Mangga, Penangkaran Rusa, Peternakan Sapi.</div>
+      <div class="fasilitas-badge">🔬 Lab IPA</div> <div class="fasilitas-badge">💻 Lab Komputer</div> <div class="fasilitas-badge">📚 Perpustakaan Digital</div>
+      <div class="fasilitas-badge">🏊 Kolam Renang</div> <div class="fasilitas-badge">✂️ Menjahit</div> <div class="fasilitas-badge">📱 Smart Panel</div>
+      <div class="fasilitas-badge">🕌 Saung Zikir & Masjid</div> <div class="fasilitas-badge">🏟️ Sport Centre</div> <div class="fasilitas-badge">🍽️ Kantin & BLK</div>
+      <div style="background:#F4FBF8; border-radius: 28px; padding: 14px; margin-top: 18px;"><i class="fas fa-store"></i> <strong>Unit usaha produktif santri:</strong> Air Mineral NBS, NBS Cake & Bakery, Perikanan, Kebun Mangga, Penangkaran Rusa, Peternakan Sapi.</div>
     </div>
   </div>
 
-  <!-- 4. Syarat & Ketentuan -->
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleAccordion(this)">📝 Syarat & Ketentuan Pendaftaran <i class="fas fa-chevron-down"></i></div>
+  <!-- 4. Syarat Pendaftaran -->
+  <div class="accordion-modern">
+    <div class="accordion-header" onclick="toggleAccordion(this)">📝 Syarat & Ketentuan <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
-      <ul style="margin-left: 20px;">
-        <li>Lulusan SD/SMP atau sederajat</li>
+      <ul style="margin-left: 20px; list-style-type: circle;">
+        <li>Lulusan SD/MI / SMP/MTs atau sederajat (sesuai jenjang)</li>
         <li>Beragama Islam</li>
-        <li>Mengisi formulir pendaftaran</li>
-        <li>Melampirkan: SKL, Surat kelakuan baik, KK, Akte Kelahiran, KTP Orang Tua, foto 3x4 (2 lembar), sertifikat prestasi (jika ada)</li>
-        <li>Pernyataan tertulis siap dipondokkan & mematuhi peraturan NBS</li>
+        <li>Mengisi formulir online & offline</li>
+        <li>Melampirkan: SKL, Surat kelakuan baik, KK, Akte Kelahiran, KTP Orang Tua, pas foto 3x4 (2 lembar), sertifikat prestasi (jika ada)</li>
+        <li>Pernyataan tertulis siap mengikuti pola asrama & mematuhi aturan pesantren</li>
       </ul>
     </div>
   </div>
 
-  <!-- 5. Jadwal Tes & Wawancara + registrasi ulang dan tes kompetensi -->
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleAccordion(this)">🗓️ Jadwal Seleksi & Tes <i class="fas fa-chevron-down"></i></div>
+  <!-- 5. Jadwal Tes + Registrasi ulang dan kompetensi -->
+  <div class="accordion-modern">
+    <div class="accordion-header" onclick="toggleAccordion(this)">🗓️ Jadwal Seleksi & Tes Masuk <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
       <div class="jadwal-box">
-        <p><i class="fas fa-calendar-alt"></i> <strong>Gelombang I:</strong> 15 Juni 2026</p>
+        <p><i class="fas fa-calendar-alt"></i> <strong>Gelombang I:</strong> 15 Juni 2026 (Tes & Wawancara)</p>
         <p><i class="fas fa-calendar-alt"></i> <strong>Gelombang II:</strong> 18 Juli 2026</p>
         <p><i class="fas fa-edit"></i> <strong>Registrasi Ulang (Gel.I):</strong> 20 - 22 Juni 2026</p>
         <p><i class="fas fa-pen-alt"></i> <strong>Tes Kompetensi Dasar & Wawancara (Gel.I):</strong> 22 Juni 2026</p>
-        <p><i class="fas fa-exclamation-triangle"></i> Jadwal dapat berubah.</p>
-        <p>Pendaftaran: 6 April – 12 Juli 2026</p>
+        <p><i class="fas fa-exclamation-triangle"></i> Jadwal dapat berubah menyesuaikan, pantau info grup WA.</p>
+        <p><strong>Pendaftaran umum:</strong> 6 April – 12 Juli 2026</p>
       </div>
     </div>
   </div>
 
   <!-- 6. Beasiswa & Bantuan Sosial -->
-  <div class="accordion-item">
+  <div class="accordion-modern">
     <div class="accordion-header" onclick="toggleAccordion(this)">🎓 Beasiswa & Bansos <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
-      <div class="chip-list"><span class="chip">🏅 Beasiswa Prestasi</span><span class="chip">📖 Beasiswa Tahfidz</span><span class="chip">🤝 Bantuan Sosial (kurang mampu & yatim)</span></div>
-      <p style="font-size:0.8rem; margin-top:10px;">*Syarat ditetapkan setiap semester.</p>
+      <div><span class="chip-modern">🏅 Beasiswa Prestasi Akademik/Olahraga/Seni</span> <span class="chip-modern">📖 Beasiswa Tahfidz Quran (minimal 5 juz)</span> <span class="chip-modern">🤝 Bantuan Sosial (kurang mampu & santri yatim)</span></div>
+      <p style="font-size:0.8rem; margin-top: 14px;">*Syarat dan ketentuan berlaku, evaluasi setiap semester. Hubungi admin untuk info detail.</p>
     </div>
   </div>
 
-  <!-- 7. ✨ BARU: Barang yang disiapkan santri baru saat masuk pondok -->
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleAccordion(this)">🎒 Barang yang Disiapkan Santri Baru <i class="fas fa-chevron-down"></i></div>
+  <!-- 7. Barang yang disiapkan santri baru -->
+  <div class="accordion-modern">
+    <div class="accordion-header" onclick="toggleAccordion(this)">🎒 Persiapan Barang Santri Baru <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
       <ul class="list-icon">
-        <li><i class="fas fa-tshirt"></i> Pakaian islami (koko/putih, rok/celana panjang)</li>
-        <li><i class="fas fa-book"></i> Al-Qur’an dan perlengkapan ibadah (mukena, sajadah)</li>
+        <li><i class="fas fa-tshirt"></i> Pakaian islami (koko/putih, rok/celana panjang syar’i)</li>
+        <li><i class="fas fa-book"></i> Al-Qur’an dan perlengkapan ibadah (mukena, sajadah, sarung)</li>
         <li><i class="fas fa-bed"></i> Perlengkapan tidur (sprei, selimut, bantal)</li>
-        <li><i class="fas fa-utensils"></i> Peralatan makan & minum pribadi</li>
-        <li><i class="fas fa-soap"></i> Alat mandi & kebersihan diri</li>
+        <li><i class="fas fa-utensils"></i> Peralatan makan & minum pribadi (botol minum, kotak makan)</li>
+        <li><i class="fas fa-soap"></i> Alat mandi & kebersihan diri (sabun, sikat gigi, handuk)</li>
         <li><i class="fas fa-pen-alt"></i> Alat tulis lengkap & buku catatan</li>
         <li><i class="fas fa-tshirt"></i> Pakaian olahraga & jas hujan</li>
-        <li><i class="fas fa-camera"></i> (Opsional) HP hanya untuk keperluan belajar sesuai aturan</li>
+        <li><i class="fas fa-camera"></i> (Opsional) HP hanya untuk keperluan belajar sesuai aturan pondok</li>
       </ul>
-      <div class="note-biaya" style="margin-top: 12px;">💡 Disarankan memberi label nama pada setiap barang.</div>
+      <div class="sub-biaya" style="margin-top: 12px;"><i class="fas fa-tag"></i> Disarankan memberi label nama pada setiap barang pribadi.</div>
     </div>
   </div>
 
-  <!-- 8. ✨ BARU: Tata Tertib Santri NBS -->
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleAccordion(this)">📜 Tata Tertib Santri NBS <i class="fas fa-chevron-down"></i></div>
+  <!-- 8. Tata Tertib Santri NBS -->
+  <div class="accordion-modern">
+    <div class="accordion-header" onclick="toggleAccordion(this)">📜 Tata Tertib & Kedisiplinan <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
       <ul class="list-icon">
-        <li><i class="fas fa-mosque"></i> Wajib melaksanakan shalat berjamaah & mengaji</li>
-        <li><i class="fas fa-clock"></i> Disiplin waktu (bangun pagi, belajar, istirahat)</li>
-        <li><i class="fas fa-language"></i> Wajib menggunakan bahasa Indonesia/Inggris/Arab di lingkungan tertentu</li>
-        <li><i class="fas fa-mobile-alt"></i> Penggunaan gadget diatur sesuai jadwal & untuk pembelajaran</li>
-        <li><i class="fas fa-hand-sparkles"></i> Menjaga kebersihan asrama dan lingkungan</li>
-        <li><i class="fas fa-users"></i> Hormat kepada guru & sesama santri, dilarang bullying</li>
-        <li><i class="fas fa-graduation-cap"></i> Mengikuti seluruh program pondok dan kegiatan ekstrakurikuler wajib</li>
-        <li><i class="fas fa-ban"></i> Dilarang merokok, membawa senjata tajam, atau narkoba</li>
-        <li><i class="fas fa-store"></i> Tidak boleh keluar pondok tanpa izin pengasuh</li>
+        <li><i class="fas fa-mosque"></i> Wajib shalat berjamaah (subuh, dzuhur, ashar, maghrib, isya) & mengaji rutin</li>
+        <li><i class="fas fa-clock"></i> Disiplin waktu belajar, ibadah, dan istirahat (jadwal ketat)</li>
+        <li><i class="fas fa-language"></i> Wajib menggunakan bahasa Indonesia/Inggris/Arab di lingkungan akademik</li>
+        <li><i class="fas fa-mobile-alt"></i> Penggunaan gadget diatur sesuai jadwal & untuk pembelajaran (tanpa medsos berlebih)</li>
+        <li><i class="fas fa-hand-sparkles"></i> Menjaga kebersihan asrama, area pesantren, dan gotong royong</li>
+        <li><i class="fas fa-users"></i> Hormat pada guru & sesama santri, zero bullying</li>
+        <li><i class="fas fa-graduation-cap"></i> Mengikuti seluruh program pondok dan ekskul wajib</li>
+        <li><i class="fas fa-ban"></i> Dilarang merokok, narkoba, membawa senjata tajam, atau tindak kriminal</li>
+        <li><i class="fas fa-store"></i> Tidak keluar pesantren tanpa izin pengasuh / orang tua wali</li>
       </ul>
-      <div class="note-biaya" style="margin-top: 12px;">⚠️ Pelanggaran tata tertib akan dikenakan sanksi sesuai aturan pesantren.</div>
+      <div class="sub-biaya" style="margin-top: 12px;">⚠️ Pelanggaran tata tertib akan dikenakan sanksi edukatif sesuai aturan pesantren.</div>
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <div class="footer-contact">
+  <!-- FOOTER KONTAK & SOSIAL -->
+  <div class="footer-elegant">
     <i class="fas fa-envelope"></i> nurmiladboardingschool@gmail.com<br/>
-    <div style="margin-top: 12px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-      <a href="https://forms.zohopublic.com/kurikulumnbs/form/FormulirPPDB20222023/formperma/-bRttw0T_yAdxCKwU5lu5OI75fdLrOVDUgzjMUpgKV0" target="_blank" style="color: #ffefcf;">📝 Formulir</a>
-      <a href="https://wa.me/6285796097322" target="_blank" style="color: #ffefcf;">💬 WA Admin</a>
-      <a href="https://chat.whatsapp.com/CBY9DcuXDSJ4na5IvwE18y" target="_blank" style="color: #ffefcf;">👥 Grup WA</a>
+    <div style="margin: 16px 0; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+      <a href="https://forms.zohopublic.com/kurikulumnbs/form/FormulirPPDB20222023/formperma/-bRttw0T_yAdxCKwU5lu5OI75fdLrOVDUgzjMUpgKV0" target="_blank" style="color: #ffffffaa; text-decoration: none; font-weight: 500;">📝 Formulir Online →</a>
+      <a href="https://wa.me/6285796097322" target="_blank" style="color: #ffffffaa; text-decoration: none;">💬 WhatsApp Admin</a>
+      <a href="https://chat.whatsapp.com/CBY9DcuXDSJ4na5IvwE18y" target="_blank" style="color: #ffffffaa; text-decoration: none;">👥 Gabung Grup Info</a>
     </div>
-    <p style="margin-top: 16px; font-size: 11px;">© 2026 Nurmild Boarding School - SPMB SMP-SMA</p>
+    <p style="margin-top: 14px; font-size: 12px; opacity: 0.7;">© 2026 Nurmild Boarding School – Sistem Penerimaan Santri Baru SMP & SMA</p>
   </div>
 </div>
 
@@ -413,7 +477,7 @@
   function toggleAccordion(header) {
     const content = header.nextElementSibling;
     const isActive = header.classList.contains('active');
-    // Tutup semua accordion (opsional, biar ga kebanyakan buka)
+    // Tutup semua accordion lain agar lebih rapi (optional)
     document.querySelectorAll('.accordion-header').forEach(h => {
       if (h !== header && h.classList.contains('active')) {
         h.classList.remove('active');
@@ -428,7 +492,15 @@
       content.classList.remove('show');
     }
   }
-  // Optional: agar yang pertama (prestasi) terbuka secara default? biarkan tertutup rapi.
+  // Pastikan semua accordion tertutup saat load
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.accordion-content').forEach(c => {
+      c.classList.remove('show');
+    });
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.classList.remove('active');
+    });
+  });
 </script>
 </body>
 </html>
