@@ -300,7 +300,7 @@
       padding: 0 22px;
     }
     .accordion-content.show {
-      max-height: 1600px;
+      max-height: 1800px;
       padding: 8px 22px 28px 22px;
       border-top: 1px solid #e2f0eb;
     }
@@ -347,9 +347,20 @@
       padding: 6px 18px;
       border-radius: 50px;
       display: inline-block;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
       margin: 0 6px 8px 0;
+      color: #1f5e52;
+    }
+    .prestasi-list {
+      margin: 12px 0 0 20px;
+      list-style-type: disc;
+      color: #2c5a4f;
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+    .prestasi-list li {
+      margin-bottom: 6px;
     }
     .fasilitas-badge {
       background: #ecf7f3;
@@ -383,6 +394,7 @@
     @media (max-width: 550px) {
       .biaya-nominal { font-size: 1.3rem; }
       .eskul-grid { grid-template-columns: 1fr; }
+      .prestasi-list { margin-left: 16px; }
     }
   </style>
 </head>
@@ -436,23 +448,59 @@
     <a href="https://chat.whatsapp.com/CBY9DcuXDSJ4na5IvwE18y" target="_blank" class="btn-premium btn-wa-group"><i class="fab fa-whatsapp"></i> Grup Informasi</a>
   </div>
 
-  <!-- ACCORDION INTERAKTIF SEMUA KONTEN (DENGAN ESKUL LENGKAP) -->
-  <!-- 1. Prestasi -->
+  <!-- ACCORDION PRESTASI LENGKAP -->
   <div class="accordion-modern">
-    <div class="accordion-header" onclick="toggleAccordion(this)">🏆 Prestasi & Kejuaraan <i class="fas fa-chevron-down"></i></div>
+    <div class="accordion-header" onclick="toggleAccordion(this)">🏆 Prestasi & Kejuaraan – Nasional, Internasional, Regional <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
-      <div><strong>🏅 Nasional (LIPI/LPSN/OPSI/Kemendikbud)</strong></div>
-      <div style="margin: 8px 0 10px;">
-        <span class="chip-modern">10 Besar Nasional 2021</span> <span class="chip-modern">Finalis 2019 Solo</span> <span class="chip-modern">Perunggu 2018</span>
-        <span class="chip-modern">Perak 2016 Jakarta</span> <span class="chip-modern">Emas 2013 Bali</span> <span class="chip-modern">Perak 2010 Jogja</span>
-      </div>
-      <div><strong>🌍 Internasional & Puskanas</strong></div>
-      <div><span class="chip-modern">16 Medali Emas (2026)</span> <span class="chip-modern">31 Medali Perak (2026)</span> <span class="chip-modern">13 Perunggu (2026)</span>
-      <span class="chip-modern">4 Emas Olimpiade Semesta</span> <span class="chip-modern">Jamboree Nasional 2016/2022</span> <span class="chip-modern">Scientific Visit Thailand</span></div>
+      <div><strong>🏅 Penghargaan LPIR/LPSN/OPSI Tingkat Nasional (Kemendikbud)</strong></div>
+      <ul class="prestasi-list">
+        <li>🏅 10 Besar Tingkat Nasional Tahun 2021</li>
+        <li>🏅 Finalis Tahun 2019 (Solo/Surakarta)</li>
+        <li>🥉 1 Medali Perunggu Tahun 2018 (Surabaya)</li>
+        <li>🥉 1 Medali Perunggu Tahun 2017 (Jakarta)</li>
+        <li>🥈 1 Medali Perak Tahun 2016 (Jakarta) | 🥉 2 Medali Perunggu Tahun 2016 (Jakarta)</li>
+        <li>🥉 1 Medali Perunggu Tahun 2015 (Bali)</li>
+        <li>🏅 Finalis Tahun 2014 (Banten)</li>
+        <li>🥇 1 Medali Emas Tahun 2013 (Bali)</li>
+        <li>🥈 1 Medali Perak Tahun 2012 (Banjarmasin) | 🥉 1 Medali Perunggu Tahun 2012 (Banjarmasin)</li>
+        <li>🏅 Finalis Tahun 2011 (Solo/Surakarta)</li>
+        <li>🥈 1 Medali Perak Tahun 2010 (Yogyakarta) dan berbagai capaian lainnya</li>
+      </ul>
+
+      <div style="margin-top: 18px;"><strong>🌍 Pengalaman & Medali Tingkat Nasional (Puskanas) & Internasional</strong></div>
+      <ul class="prestasi-list">
+        <li>✨ <strong>Tahun 2026 (Diselenggarakan Puskanas)</strong> – 16 Medali Emas (ISO, KSI-HP, OLIMNAS, OSPANAS, OSSAN)</li>
+        <li>✨ <strong>Tahun 2026</strong> – 31 Medali Perak (ISO, KSI-HP, KSSI, OLIMNAS, OSH, OSN-AT, OSSAN, PESONA)</li>
+        <li>✨ <strong>Tahun 2026</strong> – 13 Medali Perunggu (ISO, KSI-HP, OLIMNAS, OSN-AT, OSSAN, PESONA)</li>
+        <li>🌟 <strong>Tahun 2025 (Puskanas)</strong> – 4 Medali Emas Olimpiade Sains Tingkat Nasional</li>
+        <li>🌟 <strong>Tahun 2025</strong> – 3 Medali Perak Olimpiade Sains Tingkat Nasional</li>
+        <li>🏕️ Jambore Nasional 2016 dan 2022</li>
+        <li>🔬 Scientific Visit Jakarta & Bandung (2009, 2010, 2014, 2015, 2023)</li>
+        <li>🌏 Scientific Visit Thailand (2013)</li>
+        <li>🚩 PIRNAS Bontang (2012), PIRNAS Jombang (2011), PIRNAS Bangka Belitung (2010), dll.</li>
+      </ul>
+
+      <div style="margin-top: 18px;"><strong>🏅 Prestasi Tingkat Regional (Kabupaten & Provinsi)</strong></div>
+      <ul class="prestasi-list">
+        <li>Juara 3 O2SN Renang 2019 (Kab.)</li>
+        <li>Juara 1 O2SN Renang 2018 (Kab.)</li>
+        <li>Juara 1 Duta Budaya (PNUP) Putra Wajo 2018</li>
+        <li>Juara 1 OSN SMP Matematika 2016 (Kab.)</li>
+        <li>Juara 1 FLS2N Tahun 2016 (Kab.)</li>
+        <li>Juara 1 Pidato (Depag) Tahun 2015 (Kab.)</li>
+        <li>Juara 1 Debat (Depag) Tahun 2014 (Provinsi)</li>
+        <li>Juara 1 Debat (Depag) Tahun 2014 (Kab.)</li>
+        <li>Juara 1 MTQ Tahun 2014 (Kab.)</li>
+        <li>Juara 1 English Camp 2014 (Kab.)</li>
+        <li>Juara 1 Pospeda (Depag) tahun 2013 (Kab.)</li>
+        <li>Juara 1 Pidato English Tahun 2013 (Kab.)</li>
+        <li>Serta berbagai prestasi akademik & non-akademik lainnya di tingkat daerah.</li>
+      </ul>
+      <div class="sub-biaya" style="margin-top: 16px;"><i class="fas fa-medal"></i> NBS terus mencetak generasi unggul bertaraf nasional dan internasional. Prestasi berkelanjutan membangun kebanggaan pesantren.</div>
     </div>
   </div>
 
-  <!-- 2. Program Unggulan & EKSTRAKURIKULER (lengkap semua daftar) -->
+  <!-- 2. Program Unggulan & EKSTRAKURIKULER -->
   <div class="accordion-modern">
     <div class="accordion-header" onclick="toggleAccordion(this)">📖 Program Kepesantrenan & Ekstrakurikuler Lengkap <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
@@ -496,17 +544,28 @@
     </div>
   </div>
 
-  <!-- 4. Syarat Pendaftaran -->
+  <!-- 4. Syarat Pendaftaran (DIPERBAIKI SESUAI PERMINTAAN) -->
   <div class="accordion-modern">
-    <div class="accordion-header" onclick="toggleAccordion(this)">📝 Syarat & Ketentuan <i class="fas fa-chevron-down"></i></div>
+    <div class="accordion-header" onclick="toggleAccordion(this)">📝 Syarat & Ketentuan Pendaftaran <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
-      <ul style="margin-left: 20px; list-style-type: circle;">
-        <li>Lulusan SD/MI / SMP/MTs atau sederajat (sesuai jenjang)</li>
-        <li>Beragama Islam</li>
-        <li>Mengisi formulir online & offline</li>
-        <li>Melampirkan: SKL, Surat kelakuan baik, KK, Akte Kelahiran, KTP Orang Tua, pas foto 3x4 (2 lembar), sertifikat prestasi (jika ada)</li>
-        <li>Pernyataan tertulis siap mengikuti pola asrama & mematuhi aturan pesantren</li>
-      </ul>
+      <ol style="margin-left: 1.2rem; line-height: 1.6; color: #2c5a4f; font-weight: 500;">
+        <li>Lulusan Satuan Pendidikan SD/Sederajat (untuk jenjang SMP) atau SMP/Sederajat (untuk jenjang SMA).</li>
+        <li>Beragama Islam.</li>
+        <li>Mengisi <strong>Formulir Pendaftaran</strong> dan melampirkan berkas-berkas berikut (masing-masing 2 rangkap fotokopi):
+          <ul style="margin-top: 8px; margin-left: 1.2rem; list-style-type: circle;">
+            <li>Surat Keterangan Lulus (atau sejenisnya) dari Kepala Sekolah.</li>
+            <li>Buku Rapor (fotokopi nilai yang sudah dilegalisir).</li>
+            <li>Surat Keterangan Berkelakuan Baik dari Kepala Sekolah.</li>
+            <li>Sertifikat Prestasi / Piagam Penghargaan (bagi yang memiliki).</li>
+            <li>Kartu Keluarga, Akte Kelahiran.</li>
+            <li>KTP Orang Tua/Wali.</li>
+            <li>KIP/KKS (bagi yang memiliki).</li>
+          </ul>
+          <div style="margin: 10px 0 0 0;"><strong>Foto ukuran 3×4 berwarna sebanyak 2 lembar.</strong></div>
+        </li>
+        <li>Membuat pernyataan tertulis <em>“siap dipondokkan dan siap mematuhi peraturan Nurmilad Boarding School”</em> bagi Calon Peserta Didik dan Orang Tua/Wali (format terlampir di formulir Pendaftaran).</li>
+      </ol>
+      <div class="sub-biaya" style="margin-top: 18px;"><i class="fas fa-info-circle"></i> Semua berkas pendukung diserahkan saat verifikasi berkas atau diunggah secara digital melalui formulir online. Pastikan kelengkapan dokumen untuk memperlancar proses seleksi.</div>
     </div>
   </div>
 
