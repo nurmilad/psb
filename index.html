@@ -183,6 +183,59 @@
       margin-top: 12px;
     }
 
+    /* MENGAPA MEMILIH NBS - grid keunggulan */
+    .why-nbs {
+      background: #fffef7;
+      border-radius: 48px;
+      padding: 1.7rem;
+      margin: 20px 0 20px;
+      border: 1px solid #cfdfd8;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    }
+    .why-nbs h2 {
+      font-size: 1.6rem;
+      color: #1f685b;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .why-item {
+      background: #F9FCFA;
+      padding: 14px 18px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.2s;
+      border: 1px solid #e0ede8;
+    }
+    .why-item i {
+      font-size: 2rem;
+      color: #2b8f7c;
+      min-width: 40px;
+      text-align: center;
+    }
+    .why-item span {
+      font-weight: 600;
+      color: #1f4e46;
+      line-height: 1.3;
+    }
+    .why-item small {
+      font-weight: normal;
+      font-size: 0.8rem;
+      color: #4f6b64;
+      display: block;
+    }
+    @media (max-width: 550px) {
+      .why-grid { grid-template-columns: 1fr; }
+    }
+
     /* tombol aksi premium */
     .aksi-group {
       display: flex;
@@ -264,6 +317,31 @@
       width: 26px;
       color: #2b8f7c;
     }
+    /* grid untuk daftar eskul yang banyak */
+    .eskul-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .eskul-item {
+      background: #f8fbf9;
+      border-radius: 24px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1e5a4e;
+      transition: 0.1s;
+      border: 1px solid #e2efe9;
+    }
+    .eskul-item i {
+      width: 28px;
+      font-size: 1.2rem;
+      color: #2b8f7c;
+    }
     .chip-modern {
       background: #ecf7f3;
       padding: 6px 18px;
@@ -304,6 +382,7 @@
     }
     @media (max-width: 550px) {
       .biaya-nominal { font-size: 1.3rem; }
+      .eskul-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -334,6 +413,22 @@
     <div class="sub-biaya"><i class="fas fa-utensils"></i> Konsumsi bulanan Rp450.000 | Iuran pemeliharaan pondok Rp150.000<br>✨ Beasiswa prestasi, tahfidz, dan bansos (yatim & kurang mampu).</div>
   </div>
 
+  <!-- ✨ MENGAPA MEMILIH NBS ✨ -->
+  <div class="why-nbs">
+    <h2><i class="fas fa-star-of-life"></i> Mengapa Memilih NBS?</h2>
+    <div class="why-grid">
+      <div class="why-item"><i class="fas fa-award"></i><span>SMP & SMA Terakreditasi "A"</span></div>
+      <div class="why-item"><i class="fas fa-trophy"></i><span>Berprestasi Tingkat NASIONAL setiap tahun</span></div>
+      <div class="why-item"><i class="fas fa-wallet"></i><span>Biaya Pendidikan TERJANGKAU</span></div>
+      <div class="why-item"><i class="fas fa-user-graduate"></i><span>Lulusan BERKUALITAS dan berkarakter mulia</span></div>
+      <div class="why-item"><i class="fas fa-university"></i><span>Lulusan terserap di Perguruan Tinggi TERBAIK termasuk <strong>Universitas Indonesia</strong></span></div>
+      <div class="why-item"><i class="fas fa-building"></i><span>Memiliki FASILITAS Sarpras yang Lengkap</span></div>
+      <div class="why-item"><i class="fas fa-palette"></i><span>Banyak PROGRAM pengembangan BAKAT & MINAT santri</span></div>
+      <div class="why-item"><i class="fas fa-quran"></i><span>Memiliki Lembaga TAHFIDZ QUR'AN</span></div>
+      <div class="why-item"><i class="fas fa-water"></i><span>Memiliki Destinasi Wisata Populer di Kab. Wajo <strong>"TELAGA BIRU"</strong></span></div>
+    </div>
+  </div>
+
   <!-- TOMBOL AKSI PRESISI -->
   <div class="aksi-group">
     <a href="https://forms.zohopublic.com/kurikulumnbs/form/FormulirPPDB20222023/formperma/-bRttw0T_yAdxCKwU5lu5OI75fdLrOVDUgzjMUpgKV0" target="_blank" class="btn-premium btn-daftar"><i class="fas fa-pen-alt"></i> Daftar Sekarang</a>
@@ -341,7 +436,7 @@
     <a href="https://chat.whatsapp.com/CBY9DcuXDSJ4na5IvwE18y" target="_blank" class="btn-premium btn-wa-group"><i class="fab fa-whatsapp"></i> Grup Informasi</a>
   </div>
 
-  <!-- ACCORDION INTERAKTIF SEMUA KONTEN (tema baru) -->
+  <!-- ACCORDION INTERAKTIF SEMUA KONTEN (DENGAN ESKUL LENGKAP) -->
   <!-- 1. Prestasi -->
   <div class="accordion-modern">
     <div class="accordion-header" onclick="toggleAccordion(this)">🏆 Prestasi & Kejuaraan <i class="fas fa-chevron-down"></i></div>
@@ -357,21 +452,36 @@
     </div>
   </div>
 
-  <!-- 2. Program Sekul & Kepesantrenan -->
+  <!-- 2. Program Unggulan & EKSTRAKURIKULER (lengkap semua daftar) -->
   <div class="accordion-modern">
-    <div class="accordion-header" onclick="toggleAccordion(this)">📖 Program Unggulan & Ekstrakurikuler <i class="fas fa-chevron-down"></i></div>
+    <div class="accordion-header" onclick="toggleAccordion(this)">📖 Program Kepesantrenan & Ekstrakurikuler Lengkap <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
-      <ul class="list-icon">
-        <li><i class="fas fa-microphone-alt"></i> Bimbingan Da’wah & English Interactive</li>
-        <li><i class="fas fa-book-quran"></i> Kajian Kitab Kuning, Hadist, Fiqhi, Adab, Tajwid</li>
-        <li><i class="fas fa-fist-raised"></i> Beladiri (Tapak Suci) & PMR</li>
-        <li><i class="fas fa-music"></i> Seni Tradisional, Qasidah Rebana, Drumband</li>
-        <li><i class="fas fa-laptop-code"></i> Karya Tulis Ilmiah, Olimpiade Informatika</li>
-        <li><i class="fas fa-camera"></i> Fotografi & Videografi</li>
-        <li><i class="fas fa-tshirt"></i> Menjahit, Tata Boga</li>
-        <li><i class="fas fa-campground"></i> Pramuka, Paskibra</li>
-        <li><i class="fas fa-language"></i> Bahasa Arab & Bahasa Jepang</li>
-      </ul>
+      <p style="margin-bottom: 12px; font-weight: 600; color:#2b8f7c;"><i class="fas fa-gem"></i> NBS menyediakan puluhan program pembinaan karakter, keilmuan islam, dan bakat minat:</p>
+      <div class="eskul-grid">
+        <div class="eskul-item"><i class="fas fa-chalkboard-teacher"></i> Bimbingan Da'wah</div>
+        <div class="eskul-item"><i class="fas fa-hadith"></i> Bimbingan Hadits</div>
+        <div class="eskul-item"><i class="fas fa-book"></i> Kajian Kitab Kuning</div>
+        <div class="eskul-item"><i class="fas fa-mosque"></i> Bimbingan Fiqhi</div>
+        <div class="eskul-item"><i class="fas fa-hand-peace"></i> Bimbingan Adab</div>
+        <div class="eskul-item"><i class="fas fa-quran"></i> Baca Tulis Al-Qur'an (BTQ)</div>
+        <div class="eskul-item"><i class="fas fa-language"></i> Bahasa Arab</div>
+        <div class="eskul-item"><i class="fas fa-language"></i> Bahasa Jepang</div>
+        <div class="eskul-item"><i class="fas fa-flask"></i> Karya Tulis Ilmiah</div>
+        <div class="eskul-item"><i class="fas fa-campground"></i> Pramuka</div>
+        <div class="eskul-item"><i class="fas fa-flag-checkered"></i> Paskibra Sekolah</div>
+        <div class="eskul-item"><i class="fas fa-comments"></i> English Interactive</div>
+        <div class="eskul-item"><i class="fas fa-fist-raised"></i> Beladiri (Tapak Suci)</div>
+        <div class="eskul-item"><i class="fas fa-heartbeat"></i> Palang Merah Remaja (PMR)</div>
+        <div class="eskul-item"><i class="fas fa-music"></i> Seni Tradisional (Musik/Tari)</div>
+        <div class="eskul-item"><i class="fas fa-drumstick-bite"></i> Qasidah Rebana</div>
+        <div class="eskul-item"><i class="fas fa-drum"></i> Drumband</div>
+        <div class="eskul-item"><i class="fas fa-cut"></i> Keterampilan Menjahit</div>
+        <div class="eskul-item"><i class="fas fa-utensils"></i> Tata Boga</div>
+        <div class="eskul-item"><i class="fas fa-laptop-code"></i> Informatika (Pemrograman & Robotik)</div>
+        <div class="eskul-item"><i class="fas fa-camera"></i> Fotography / Videography</div>
+        <div class="eskul-item"><i class="fas fa-ellipsis-h"></i> Dan masih banyak kegiatan lain (Olahraga, Tahfidz, dll)</div>
+      </div>
+      <div class="sub-biaya" style="margin-top: 16px;"><i class="fas fa-check-circle"></i> Setiap santri dibina secara intensif sesuai minat & bakat. Prestasi di berbagai lomba terus diukir.</div>
     </div>
   </div>
 
@@ -477,7 +587,7 @@
   function toggleAccordion(header) {
     const content = header.nextElementSibling;
     const isActive = header.classList.contains('active');
-    // Tutup semua accordion lain agar lebih rapi (optional)
+    // Tutup semua accordion lain agar lebih rapi
     document.querySelectorAll('.accordion-header').forEach(h => {
       if (h !== header && h.classList.contains('active')) {
         h.classList.remove('active');
