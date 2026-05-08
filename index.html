@@ -293,7 +293,7 @@
       padding: 0 22px;
     }
     .accordion-content.show {
-      max-height: 2500px;
+      max-height: 3000px;
       padding: 8px 22px 28px 22px;
       border-top: 1px solid #e2f0eb;
     }
@@ -400,7 +400,7 @@
       .biaya-nominal { font-size: 1.3rem; }
       .eskul-grid { grid-template-columns: 1fr; }
       .prestasi-list { margin-left: 16px; }
-      .accordion-content.show { max-height: 3000px; }
+      .accordion-content.show { max-height: 3500px; }
     }
   </style>
 </head>
@@ -409,7 +409,7 @@
   <!-- HERO DENGAN LOGO -->
   <div class="hero-modern">
     <div class="hero-logo">
-      <img src="logo.png" alt="Logo Nurmild Boarding School">
+      <img src="logo.png" alt="Logo Nurmild Boarding School" onerror="this.src='https://placehold.co/85x85?text=NBS'">
     </div>
     <div class="hero-text">
       <h1>📢 SPMB SMP - SMA<br>Nurmild Boarding School</h1>
@@ -500,7 +500,7 @@
     <div class="accordion-content"><div><span class="chip-modern">🏅 Beasiswa Prestasi</span> <span class="chip-modern">📖 Beasiswa Tahfidz Quran (minimal 5 juz)</span> <span class="chip-modern">🤝 Bantuan Sosial</span></div><p style="font-size:0.8rem; margin-top: 14px;">*Syarat dan ketentuan berlaku, evaluasi setiap semester. Hubungi admin untuk info detail.</p></div>
   </div>
 
-  <!-- ========== PERSIAPAN SANTRI BARU (TANPA PENOMORAN a., b., c., HANYA ICON) ========== -->
+  <!-- PERLENGKAPAN BARANG SANTRI BARU -->
   <div class="accordion-modern">
     <div class="accordion-header" onclick="toggleAccordion(this)">🎒 Perlengkapan Barang Santri Baru <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
@@ -543,12 +543,35 @@
       </div>
     </div>
   </div>
-  <!-- ========== AKHIR BAGIAN PERSIAPAN ========== -->
 
-  <!-- TATA TERTIB -->
+  <!-- PERATURAN, ETIKA, AKHLAK, DAN TATA TERTIB (SESUAI PERBAIKAN) -->
   <div class="accordion-modern">
-    <div class="accordion-header" onclick="toggleAccordion(this)">📜 Tata Tertib & Kedisiplinan <i class="fas fa-chevron-down"></i></div>
-    <div class="accordion-content"><ul class="list-icon"><li><i class="fas fa-mosque"></i> Wajib shalat berjamaah & mengaji rutin</li><li><i class="fas fa-clock"></i> Disiplin waktu belajar, ibadah, dan istirahat</li><li><i class="fas fa-language"></i> Wajib menggunakan bahasa Indonesia/Inggris/Arab di lingkungan akademik</li><li><i class="fas fa-mobile-alt"></i> Penggunaan gadget diatur sesuai jadwal pembelajaran</li><li><i class="fas fa-hand-sparkles"></i> Menjaga kebersihan, gotong royong</li><li><i class="fas fa-users"></i> Hormat pada guru & sesama santri, zero bullying</li><li><i class="fas fa-graduation-cap"></i> Mengikuti seluruh program pondok dan ekskul wajib</li><li><i class="fas fa-ban"></i> Dilarang merokok, narkoba, senjata tajam, tindak kriminal</li><li><i class="fas fa-store"></i> Tidak keluar pesantren tanpa izin</li></ul><div class="sub-biaya" style="margin-top: 12px;">⚠️ Pelanggaran tata tertib akan dikenakan sanksi edukatif sesuai aturan pesantren.</div></div>
+    <div class="accordion-header" onclick="toggleAccordion(this)">📜 Peraturan, Etika, dan Akhlak serta Tata Tertib <i class="fas fa-chevron-down"></i></div>
+    <div class="accordion-content">
+      <ul class="list-icon" style="margin-bottom: 16px;">
+        <li><i class="fas fa-shield-alt"></i> Wajib taat kepada Allah, Rasul, Pemerintah RI, Pengasuh, dan Pembina Pesantren.</li>
+        <li><i class="fas fa-mosque"></i> Wajib shalat berjamaah: Subuh, Magrib, Isya di masjid; Dhuhur & Ashar di Saung Zikir & Pikir.</li>
+        <li><i class="fas fa-chalkboard-teacher"></i> Wajib mengikuti semua kegiatan belajar, pengajian Al-Qur’an, kitab, apel pagi & malam.</li>
+        <li><i class="fas fa-home"></i> Wajib menetap di lingkungan pesantren, tidak keluar tanpa izin tertulis. Kembali ke asrama maksimal pukul 22.00.</li>
+        <li><i class="fas fa-broom"></i> Wajib menjaga kebersihan diri, pakaian, lingkungan, fasilitas, dan membuang sampah pada tempatnya.</li>
+        <li><i class="fas fa-tshirt"></i> Wajib berpakaian sopan syar’i. Saat shalat: putra (baju lengan panjang polos, kopiah hitam, sarung/celana kain hitam); putri (mukena polos tanpa gambar, boleh logo pesantren).</li>
+        <li><i class="fas fa-utensils"></i> Makan tepat waktu, berjamaah, di tempat ditentukan, tidak banyak menyisa makanan.</li>
+        <li><i class="fas fa-coins"></i> Uang saku maksimal Rp50.000/hari; kelebihannya wajib dititipkan ke kantor/koperasi.</li>
+        <li><i class="fas fa-ban"></i> Dilarang merokok (termasuk elektronik), bertato, bertindik, rambut gondrong (putra), kuku panjang, kalung, gelang, menyemir rambut, model rambut blitz/kikis pinggir.</li>
+        <li><i class="fas fa-skull-crossbones"></i> Dilarang membawa/menyimpan: senjata tajam, miras, narkoba, kartu remi/domino/catur/PlayStation/layang-layang tanpa izin, alat musik/radio/TV/HP/laptop tanpa izin (HP wajib diserahkan ke pembina asrama, hanya untuk tugas belajar).</li>
+        <li><i class="fas fa-fist-raised"></i> Dilarang berkelahi, membully, menghina/melawan pembina, berkata jorok, bersorak-sorak mengganggu tamu.</li>
+        <li><i class="fas fa-venus-mars"></i> Dilarang menemui atau surat-menyurat dengan lawan jenis bukan mahram untuk non-akademik.</li>
+        <li><i class="fas fa-share-alt"></i> Dilarang memposting konten merugikan nama baik pesantren di medsos; cyberbullying, hoaks, fitnah dikenakan sanksi berat.</li>
+        <li><i class="fas fa-tools"></i> Dilarang merusak fasilitas (wajib ganti rugi), corat-coret dinding/meja/kursi, memindahkan inventaris tanpa izin.</li>
+        <li><i class="fas fa-motorcycle"></i> Dilarang membawa sepeda motor, laptop, alat listrik pribadi (setrika, kipas, colokan) tanpa izin khusus.</li>
+      </ul>
+      <div class="sub-biaya" style="margin-top: 8px; background: #fcf2e0;">
+        <strong><i class="fas fa-gavel"></i> Sanksi Pelanggaran:</strong> peringatan lisan/tertulis, surat pernyataan, hukuman edukatif (baca/tulis Al-Qur’an, kerja bakti), penyitaan, karantina, dikeluarkan. Tidak ada hukuman fisik.<br>
+        <strong>Tahapan:</strong> Peringatan I (3x kategori ringan atau 2x sedang), Peringatan II (abaikan I atau 3x sedang), Peringatan III (abaikan II atau 1x berat), Dikembalikan ke orang tua (abaikan III atau 1x sangat berat).<br>
+        <strong>Kategori sangat berat (langsung dikembalikan):</strong> zina, narkoba, melanggar hukum negara/syariat, berkelahi dengan senjata tajam.
+      </div>
+      <div class="chip-modern" style="margin-top: 18px; background: #e2f0ea;"><i class="fas fa-book"></i> Catatan: Peraturan di atas merupakan gambaran umum peraturan pesantren. Ketentuan lengkap dan sedetailnya tercantum dalam Buku Peraturan NBS yang akan diberikan kepada santri saat daftar ulang.</div>
+    </div>
   </div>
 
   <!-- FOOTER -->
