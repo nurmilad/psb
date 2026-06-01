@@ -27,15 +27,6 @@
       margin: 0 auto;
     }
 
-    .glass-card {
-      background: rgba(255, 255, 245, 0.96);
-      backdrop-filter: blur(2px);
-      border-radius: 48px;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0,0,0,0.02);
-      transition: all 0.25s ease;
-      border: 1px solid rgba(160, 190, 170, 0.4);
-    }
-
     .hero-modern {
       background: linear-gradient(125deg, #1F4E46 0%, #2A7A6B 100%);
       border-radius: 56px;
@@ -171,12 +162,74 @@
       color: #1f5a4f;
       line-height: 1;
     }
-    .sub-biaya {
-      font-size: 0.7rem;
-      background: #eef3ef;
-      padding: 10px 14px;
-      border-radius: 32px;
-      margin-top: 12px;
+    
+    /* gaya baru untuk biaya bulanan yang rapi */
+    .bulanan-wrapper {
+      background: #F8FBF9;
+      border-radius: 28px;
+      padding: 18px 20px;
+      margin-top: 20px;
+      border: 1px solid #d4e6df;
+    }
+    .bulanan-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .bulanan-item {
+      flex: 1;
+      background: #FFFFFF;
+      border-radius: 24px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      border: 1px solid #e2ede7;
+    }
+    .bulanan-label {
+      font-weight: 700;
+      color: #1f5a4f;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bulanan-nilai {
+      background: #22665a;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .beasiswa-info {
+      background: #EFF9F2;
+      border-radius: 24px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: #1f5a4f;
+      margin-top: 8px;
+    }
+    .beasiswa-info i {
+      font-size: 1.3rem;
+      color: #f1b24a;
+    }
+    @media (max-width: 550px) {
+      .bulanan-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .bulanan-item {
+        justify-content: space-between;
+      }
     }
 
     .why-nbs {
@@ -391,13 +444,6 @@
       border-left: 4px solid #f1b24a;
       padding-left: 12px;
     }
-    .seragam-detail {
-      margin-left: 1rem;
-      list-style-type: none;
-    }
-    .seragam-detail li {
-      margin-bottom: 10px;
-    }
     @media (max-width: 550px) {
       .biaya-nominal { font-size: 1.3rem; }
       .eskul-grid { grid-template-columns: 1fr; }
@@ -421,7 +467,7 @@
     </div>
   </div>
 
-  <!-- 1. BIAYA PENDIDIKAN 2026 -->
+  <!-- 1. BIAYA PENDIDIKAN 2026 (RAPI, TANPA BANNER "TIDAK ADA BIAYA TERSEMBUNYI") -->
   <div class="biaya-highlight">
     <h2 style="font-size:1.5rem; display: flex; gap: 12px; align-items: center; color:#22665a;"><i class="fas fa-tag"></i> Biaya Pendidikan 2026</h2>
     <div class="biaya-flex">
@@ -430,7 +476,24 @@
       <div class="biaya-card gratis-card"><div class="biaya-label">📚 Pendidikan Formal</div><div class="biaya-nominal">GRATIS</div></div>
       <div class="biaya-card gratis-card"><div class="biaya-label">⚡ Listrik, Air, Asrama</div><div class="biaya-nominal">GRATIS</div></div>
     </div>
-    <div class="sub-biaya"><i class="fas fa-utensils"></i> Konsumsi bulanan Rp450.000 | Iuran pemeliharaan pondok Rp150.000<br>✨ Beasiswa prestasi, tahfidz, bantuan sosial untuk yatim & kurang mampu.</div>
+
+    <!-- BIAYA BULANAN & IURAN YANG RAPI -->
+    <div class="bulanan-wrapper">
+      <div class="bulanan-row">
+        <div class="bulanan-item">
+          <span class="bulanan-label"><i class="fas fa-utensils"></i> Konsumsi bulanan</span>
+          <span class="bulanan-nilai">Rp450.000</span>
+        </div>
+        <div class="bulanan-item">
+          <span class="bulanan-label"><i class="fas fa-water"></i> Iuran pemeliharaan pondok</span>
+          <span class="bulanan-nilai">Rp150.000</span>
+        </div>
+      </div>
+      <div class="beasiswa-info">
+        <i class="fas fa-star-of-life"></i>
+        <span>Tersedia <strong>Beasiswa prestasi, tahfidz, bantuan sosial untuk yatim & kurang mampu.</strong> Silakan hubungi admin untuk informasi detail dan persyaratan.</span>
+      </div>
+    </div>
   </div>
 
   <!-- 2. MENGAPA MEMILIH NBS? -->
@@ -456,8 +519,7 @@
     <a href="https://chat.whatsapp.com/CBY9DcuXDSJ4na5IvwE18y" target="_blank" class="btn-premium btn-wa-group"><i class="fab fa-whatsapp"></i> Grup Informasi</a>
   </div>
 
-  <!-- ========== URUTAN UTAMA SESUAI PERMINTAAN ========== -->
-
+  <!-- ========== URUTAN UTAMA ========== -->
   <!-- 3. SYARAT & KETENTUAN PENDAFTARAN -->
   <div class="accordion-modern">
     <div class="accordion-header" onclick="toggleAccordion(this)">📝 Syarat & Ketentuan Pendaftaran <i class="fas fa-chevron-down"></i></div>
@@ -509,7 +571,7 @@
         <li><i class="fas fa-futbol"></i> Peralatan lain sesuai bakat santri (raket, pianika, suling/recorder, alat olahraga pribadi, dll)</li>
       </ul>
 
-      <!-- ========== DAFTAR HARGA SERAGAM (TAMBAHAN BARU) ========== -->
+      <!-- DAFTAR HARGA SERAGAM (TAMBAHAN) -->
       <div style="background:#f5f9f7; border-radius: 28px; padding: 18px; margin-top: 20px; border: 1px solid #cde3db;">
         <h4 style="display: flex; gap: 10px; align-items: center; color:#22665a; margin-bottom: 16px;"><i class="fas fa-tags"></i> Daftar Harga & Ketersediaan Seragam (2026)</h4>
         <div style="display: flex; flex-direction: column; gap: 14px;">
@@ -521,18 +583,15 @@
         </div>
         <p style="font-size:0.75rem; margin-top: 16px; background:#ebf4f0; padding: 8px 12px; border-radius: 24px;"><i class="fas fa-info-circle"></i> Harga dapat berubah sewaktu-waktu. Untuk pemesanan seragam yang hanya tersedia di Koperasi NBS, silakan hubungi panitia SPMB.</p>
       </div>
-      <!-- ========== AKHIR DAFTAR HARGA ========== -->
-
       <div class="sub-biaya" style="margin-top: 18px; background: #fff0db; font-weight: normal;">
         <i class="fas fa-tag"></i> Penting : Seluruh perlengkapan, seragam sekolah maupun pakaian sehari-hari diberikan label nama yang permanen (tidak mudah luntur / hilang). Koordinasi perlengkapan atribut dan seragam khusus kepada panitia SPMB.
       </div>
     </div>
   </div>
 
-  <!-- PEMISAH PERTAMA (setelah 5 bagian utama) -->
   <hr>
 
-  <!-- 6. PRESTASI & KEJUARAAN – NASIONAL, INTERNASIONAL, REGIONAL -->
+  <!-- 6. PRESTASI & KEJUARAAN -->
   <div class="accordion-modern">
     <div class="accordion-header" onclick="toggleAccordion(this)">🏆 Prestasi & Kejuaraan – Nasional, Internasional, Regional <i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
@@ -566,7 +625,6 @@
     <div class="accordion-content"><div><span class="chip-modern">🏅 Beasiswa Prestasi</span> <span class="chip-modern">📖 Beasiswa Tahfidz Quran (minimal 5 juz)</span> <span class="chip-modern">🤝 Bantuan Sosial</span></div><p style="font-size:0.8rem; margin-top: 14px;">*Syarat dan ketentuan berlaku, evaluasi setiap semester. Hubungi admin untuk info detail.</p></div>
   </div>
 
-  <!-- PEMISAH KEDUA (sebelum peraturan) -->
   <hr>
 
   <!-- 10. PERATURAN, ETIKA, DAN AKHLAK SERTA TATA TERTIB -->
